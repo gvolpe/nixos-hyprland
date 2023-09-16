@@ -13,8 +13,7 @@
 
   # Bootloader.
   boot = {
-    kernelPackages = pkgs.linuxPackages_6_4;
-    #kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_latest;
 
     loader = {
       systemd-boot.enable = true;
@@ -101,6 +100,10 @@
       RestartSec = 1;
       Restart = "always";
     };
+  };
+
+  hardware.opengl = {
+    enable = true;
   };
 
   # Enable the OpenSSH daemon.
